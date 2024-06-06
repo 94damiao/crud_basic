@@ -6,14 +6,14 @@ def create_connection():
     try:
         connection = mysql.connector.connect(
             host=os.getenv("DB_HOST", "localhost"),
-            user=os.getenv("DB_USER", "username"),
-            password=os.getenv("DB_PASSWORD", "password"),
-            database=os.getenv("DB_NAME", "dbname")
+            user=os.getenv("DB_USER", "root"),
+            password=os.getenv("DB_PASSWORD", ""),
+            database=os.getenv("DB_NAME", "produtos")
         )
         if connection.is_connected():
             return connection
     except Error as e:
-        print(f"The error '{e}' occurred")
+        print(f"The error '{e}' occurred") 
     return None
 
 def execute_query(query, params=None):
