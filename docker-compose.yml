@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=localhost
+      - DB_PORT=3306
+      - DB_NAME=produtos
+      - DB_USER=root
+      - DB_PASSWORD=
