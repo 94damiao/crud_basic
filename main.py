@@ -73,7 +73,6 @@ async def get_cep_info_xml(cep: str):
         response = await client.get(url)
         if response.status_code == 200:
             data = xmltodict.parse(response.content)
-            # Transform the parsed XML data into the CepResponse model
             cep_data = XMLCep(
                 cep=data['xmlcep']['cep'],
                 logradouro=data['xmlcep']['logradouro'],
